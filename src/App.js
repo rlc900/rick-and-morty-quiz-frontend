@@ -1,26 +1,40 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {Route} from 'react-router'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {withRouter} from 'react-router-dom'
+import Form from './components/Form'
+
+ class App extends React.Component {
+
+  state = {
+    user: {
+      username: ''
+    },
+    token: ''
+  }
+
+  handleLoginSubmit = (userInfo) => {
+    
+  }
+
+  renderForm = (routerProps) => {
+    if(routerProps.location.pathname === '/login') {
+      return <Form formName='Login Form' handleSubmit={this.handleLoginSubmit}/>
+    } else if (routerProps.location.pathname === 'signup') {
+      return <Form formName='Signup Form' handleSubmit={this.handleSignupSubmit}/>
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+      <Route path='/login' component={this.renderForm}
+      <Route path='/signup' component={this.renderForm}
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);
