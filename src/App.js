@@ -6,11 +6,13 @@ import {Route} from 'react-router'
 import {withRouter} from 'react-router-dom'
 import Form from './components/Form'
 import NavBar from './components/NavBar'
+import ProfileContainer from './ProfileComponents/ProfileContainer'
 
  class App extends React.Component {
 
   state = {
-    user: {}
+    user: {},
+    token: ''
   }
 
   componentDidMount() {
@@ -35,10 +37,11 @@ import NavBar from './components/NavBar'
     .then(r => r.json())
     // .then(console.log)
     .then(newUserData => {
-      if (newUserData.id) {
+      console.log(newUserData)
+      if (!newUserData.errors) {
         this.setState({
-          user: newUserData
-        })
+          user: newUserData.user
+        }, this.props.history.push('/profile'))
       }
     })
   }
@@ -74,6 +77,10 @@ import NavBar from './components/NavBar'
     }
   }
 
+  renderProfile = () => {
+    return <ProfileContainer token={this.state.token} user={this.state.user}/>
+  }
+
   render() {
     console.log(this.state, 'APP STATE')
     console.log(this.props, 'APP PROPS')
@@ -85,6 +92,7 @@ import NavBar from './components/NavBar'
       </p>
       <Route path='/login' component={this.renderForm}/>
       <Route path='/signup' component={this.renderForm}/>
+      <Route path='/profile' component={this.renderProfile}/>
       </div>
     );
   }
