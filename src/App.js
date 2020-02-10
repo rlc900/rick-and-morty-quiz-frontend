@@ -5,24 +5,54 @@ import {Route} from 'react-router'
 
 import {withRouter} from 'react-router-dom'
 import Form from './components/Form'
+import NavBar from './components/NavBar'
 
  class App extends React.Component {
 
   state = {
-    user: {
-      username: ''
-    },
-    token: ''
+    user: {}
+  }
+
+  componentDidMount() {
+    // This fetches to backend and persists
+    // information on page refresh
   }
 
   handleLoginSubmit = (userInfo) => {
-    
+    // This function is going to be used to fetch
+    // from the backend, making a POST request b/c
+    // user is filling out a form.
+    console.log('User Logged In!')
+
+  }
+
+  handleSignupSubmit = (userInfo) => {
+    console.log('This has been submitted')
+    fetch(`http://localhost:4000/users`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(
+        // didn't use curlies because userInfo is an object already
+        userInfo
+      )
+    })
+    .then(r => r.json())
+    // .then(console.log)
+    .then(newUserData => {
+      if (newUserData.id) {
+        this.setState({
+          user: newUserData
+        })
+      }
+    })
   }
 
   renderForm = (routerProps) => {
     if(routerProps.location.pathname === '/login') {
       return <Form formName='Login Form' handleSubmit={this.handleLoginSubmit}/>
-    } else if (routerProps.location.pathname === 'signup') {
+    } else if (routerProps.location.pathname === '/signup') {
       return <Form formName='Signup Form' handleSubmit={this.handleSignupSubmit}/>
     }
   }
@@ -30,8 +60,12 @@ import Form from './components/Form'
   render() {
     return (
       <div className="App">
-      <Route path='/login' component={this.renderForm}
-      <Route path='/signup' component={this.renderForm}
+      <NavBar/>
+      <p>
+      This is working
+      </p>
+      <Route path='/login' component={this.renderForm}/>
+      <Route path='/signup' component={this.renderForm}/>
       </div>
     );
   }
