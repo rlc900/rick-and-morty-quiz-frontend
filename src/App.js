@@ -22,8 +22,25 @@ import NavBar from './components/NavBar'
     // This function is going to be used to fetch
     // from the backend, making a POST request b/c
     // user is filling out a form.
-    console.log('User Logged In!')
-
+    console.log('Login form submitted')
+    fetch(`http://localhost:4000/login`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(
+        userInfo
+      )
+    })
+    .then(r => r.json())
+    // .then(console.log)
+    .then(newUserData => {
+      if (newUserData.id) {
+        this.setState({
+          user: newUserData
+        })
+      }
+    })
   }
 
   handleSignupSubmit = (userInfo) => {
@@ -58,6 +75,8 @@ import NavBar from './components/NavBar'
   }
 
   render() {
+    console.log(this.state, 'APP STATE')
+    console.log(this.props, 'APP PROPS')
     return (
       <div className="App">
       <NavBar/>
