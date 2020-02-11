@@ -22,6 +22,7 @@ class Form extends Component {
     })
   }
 
+
   render() {
     // console.log(this.state)
     let {username, password} = this.state
@@ -34,6 +35,7 @@ class Form extends Component {
         <label htmlFor='username'>Password:</label>
         <input type='text' autoComplete='off' name='password' value={password} onChange={this.handleChange}/>
         <input type='submit' value='Submit'/>
+        <h2>{this.props.error}</h2>
       </form>
     );
   }

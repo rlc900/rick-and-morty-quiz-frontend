@@ -5,6 +5,7 @@ import {Route} from 'react-router'
 import {withRouter} from 'react-router-dom'
 import Form from './components/Form'
 import NavBar from './components/NavBar'
+import Home from './components/Home'
 import ProfileContainer from './ProfileComponents/ProfileContainer'
 
  class App extends React.Component {
@@ -13,7 +14,8 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
     user: {
       quizzes: []
     },
-    token: ''
+    token: '',
+    error_message: ''
   }
 
   componentDidMount() {
@@ -62,18 +64,24 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
     // .then(console.log)
     .then(userData => {
       // console.log(userData)
-      if (!userData.errors) {
+      if (!userData.error) {
         // save token key to newUserData.token
         localStorage.setItem('token', userData.token)
         this.setState({
-          user: userData.user
-        }, this.props.history.push('/profile'))
+          user: userData.user,
+          token: userData.token
+        }, () => {
+          this.props.history.push('/profile')
+        })
       }
+      this.setState({
+        error_message: userData.error
+      })
     })
   }
 
   handleSignupSubmit = (userInfo) => {
-    console.log('This has been submitted')
+    console.log('Signup form submitted')
     fetch(`http://localhost:4000/users`, {
       method: 'POST',
       headers: {
@@ -87,19 +95,25 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
     .then(r => r.json())
     // .then(console.log)
     .then(newUserData => {
-      if (newUserData.id) {
+      if (!newUserData.error) {
         this.setState({
-          user: newUserData
+          user: newUserData.user,
+          token: newUserData.token
+        }, () => {
+          this.props.history.push('/profile')
         })
       }
+      this.setState({
+        error_message: newUserData.error
+      })
     })
   }
 
   renderForm = (routerProps) => {
     if(routerProps.location.pathname === '/login') {
-      return <Form formName='Login Form' handleSubmit={this.handleLoginSubmit}/>
+      return <Form formName='Login' handleSubmit={this.handleLoginSubmit} error={this.state.error_message}/>
     } else if (routerProps.location.pathname === '/signup') {
-      return <Form formName='Signup Form' handleSubmit={this.handleSignupSubmit}/>
+      return <Form formName='Signup' handleSubmit={this.handleSignupSubmit} error={this.state.error_message}/>
     }
   }
 
@@ -107,18 +121,26 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
     return <ProfileContainer token={this.state.token} user={this.state.user}/>
   }
 
+  renderLogout = (routerProps) => {
+      this.setState({
+        user: {}
+      })
+    localStorage.clear()
+    routerProps.history.push('/signup')
+  }
+
   render() {
-    console.log(this.state, 'APP STATE')
-    console.log(this.props, 'APP PROPS')
+    // console.log(this.state, 'APP STATE')
+    // console.log(this.props, 'APP PROPS')
     return (
       <div className="App">
       <NavBar/>
-      <p>
-      This is working
-      </p>
-      <Route path='/login' component={this.renderForm}/>
-      <Route path='/signup' component={this.renderForm}/>
-      <Route path='/profile' component={this.renderProfile}/>
+
+      <Route path="/" exact render={() => <Home /> } />
+      <Route path='/login' render={this.renderForm}/>
+      <Route path='/signup' render={this.renderForm}/>
+      <Route path='/profile' render={this.renderProfile}/>
+      <Route path='/logout' render={this.renderLogout}/>
       </div>
     );
   }
