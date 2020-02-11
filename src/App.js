@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import {Route} from 'react-router'
 
@@ -11,13 +10,38 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
  class App extends React.Component {
 
   state = {
-    user: {},
+    user: {
+      quizzes: []
+    },
     token: ''
   }
 
   componentDidMount() {
     // This fetches to backend and persists
     // information on page refresh
+    // I want information persisted when I refresh the page
+    if (localStorage.getItem('token')) {
+      let token = localStorage.getItem('token')
+
+      fetch(`http://localhost:4000/persist`, {
+        headers: {
+          Authorization: `bearer ${token}`
+        }
+      })
+      .then(r => r.json())
+      // .then(console.log)
+      .then((userData) => {
+        if(userData.token) {
+          localStorage.setItem('token', userData.token)
+          this.setState({
+            user: userData.user,
+            token: userData.token
+          }, () => {
+            this.props.history.push('/profile')
+          })
+        }
+      })
+    }
   }
 
   handleLoginSubmit = (userInfo) => {
@@ -36,11 +60,13 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
     })
     .then(r => r.json())
     // .then(console.log)
-    .then(newUserData => {
-      console.log(newUserData)
-      if (!newUserData.errors) {
+    .then(userData => {
+      // console.log(userData)
+      if (!userData.errors) {
+        // save token key to newUserData.token
+        localStorage.setItem('token', userData.token)
         this.setState({
-          user: newUserData.user
+          user: userData.user
         }, this.props.history.push('/profile'))
       }
     })
