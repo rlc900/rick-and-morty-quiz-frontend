@@ -6,19 +6,21 @@ import {withRouter} from 'react-router-dom'
 import Form from './components/Form'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
-import ProfileContainer from './ProfileComponents/ProfileContainer'
+import Profile from './ProfileContainer/Profile'
+import Question from './QuizContainer/Question'
 
  class App extends React.Component {
 
   state = {
-    user: {
-      quizzes: []
-    },
+    user: {},
     token: '',
-    error_message: ''
+    error_message: '',
+
   }
 
+
   componentDidMount() {
+    // this.renderQuestions()
     // This fetches to backend and persists
     // information on page refresh
     // I want information persisted when I refresh the page
@@ -118,7 +120,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
   }
 
   renderProfile = () => {
-    return <ProfileContainer token={this.state.token} user={this.state.user}/>
+    return <Profile token={this.state.token} user={this.state.user}/>
   }
 
   renderLogout = (routerProps) => {
@@ -141,6 +143,7 @@ import ProfileContainer from './ProfileComponents/ProfileContainer'
       <Route path='/signup' render={this.renderForm}/>
       <Route path='/profile' render={this.renderProfile}/>
       <Route path='/logout' render={this.renderLogout}/>
+      <Route path='/quiz' component={Question}/>
       </div>
     );
   }

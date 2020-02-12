@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class ProfileContainer extends Component {
+class Profile extends Component {
 
   render() {
     // console.log(this.props);
@@ -15,4 +15,4 @@ class ProfileContainer extends Component {
 
 }
 
-export default ProfileContainer;
+export default Profile;
