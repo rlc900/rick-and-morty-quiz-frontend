@@ -27,22 +27,23 @@ class Question extends Component {
     // if whichQuestionCount === questions.length
     // setState()
     //
-    let {whichQuestionCount, questionArr} = this.state
+    // let {whichQuestionCount, questionArr} = this.state
     this.setState({
       whichQuestionCount: this.state.whichQuestionCount + 1,
       points: this.state.points + value
-    }, () => console.log(this.state))
-
-    if(whichQuestionCount === questionArr.length) {
-      this.setState({
-        points: value
-      })
-    }
+    }, () => console.log(this.state.whichQuestionCount))
+    //
+    // if(whichQuestionCount > questionArr.length) {
+    //   return this.state.points
+    // }
   }
 
   getQuestions = () => {
     // return this.state.questionArr.map(question => question.question_content)
+    // console.log(this.state.questionArr[this.state.whichQuestionCount].question_content)
+    console.log("QUESTOIN ARR", this.state.questionArr[this.state.whichQuestionCount])
     return this.state.questionArr.length !== 0 ? this.state.questionArr[this.state.whichQuestionCount].question_content : []
+
     // return this.state.questionArr[0].question_content
   }
 
@@ -55,23 +56,20 @@ class Question extends Component {
     ""
   }
 
-  renderResults = () => {
-    // this function is supposed to render the users
-    // result of the quiz. The result is the character
-    // name that is based on the answers they chose
-
-    // if (this.state.questionArr.length === 7) {
-    //   <Results />
-    // }
-  }
-
   render() {
     // console.log(this.state.questionArr.map(question => console.log(question.getAnswers)))
     // debugger
+    let {whichQuestionCount, questionArr} = this.state
+    // let result;
+    // console.log("which q", whichQuestionCount);
+    if(whichQuestionCount >= questionArr.length) {
+      return <Result totalPoints={this.state.points}/>
+    }
     return (
       <div>
-        {this.getQuestions() ? this.getQuestions():"goodbye" }
+        {this.getQuestions() ? this.getQuestions():  null}
         <ol>{this.getQuestions() ? this.getAnswers() : 'you failed'}</ol>
+
       </div>
 
     );

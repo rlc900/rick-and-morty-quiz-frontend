@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+img.get-schwifty {
+  width: 80vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.nav-bar > li {
+  list-style: none;
+}

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+// import image from './get_schwifty.png'
 
 class Home extends Component {
 
   render() {
     return (
-      <div>
-      Which Rick & Morty character are you, broh?
+      <div >
+      <img className='get-schwifty' src='get_schwifty.png'/>
       </div>
     );
   }
