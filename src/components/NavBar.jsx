@@ -22,6 +22,9 @@ class NavBar extends Component {
           <li>
             <NavLink to='/quiz'>Take Quiz</NavLink>
           </li>
+          <li>
+            <NavLink to='/update'>Update Username</NavLink>
+          </li>
         </ul>
             )
     } else {

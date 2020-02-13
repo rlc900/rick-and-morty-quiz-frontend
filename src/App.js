@@ -7,6 +7,8 @@ import Form from './components/Form'
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Profile from './ProfileContainer/Profile'
+
+
 import Question from './QuizContainer/Question'
 
  class App extends React.Component {
@@ -48,13 +50,15 @@ import Question from './QuizContainer/Question'
     }
   }
 
-  handleLoginSubmit = (userInfo) => {
+  handleSubmit = (userInfo, route, method) => {
     // This function is going to be used to fetch
     // from the backend, making a POST request b/c
     // user is filling out a form.
-    console.log('Login form submitted')
-    fetch(`http://localhost:4000/login`, {
-      method: 'POST',
+    // console.log(`http://localhost:4000${route}`)
+    // console.log(method)
+    // console.log(userInfo)
+    fetch(`http://localhost:4000${route}`, {
+      method: `${method}`,
       headers: {
         'content-type': 'application/json'
       },
@@ -65,7 +69,7 @@ import Question from './QuizContainer/Question'
     .then(r => r.json())
     // .then(console.log)
     .then(userData => {
-      // console.log(userData)
+      console.log(userData)
       if (!userData.error) {
         // save token key to newUserData.token
         localStorage.setItem('token', userData.token)
@@ -81,46 +85,48 @@ import Question from './QuizContainer/Question'
       })
     })
   }
-
-  handleSignupSubmit = (userInfo) => {
-    console.log('Signup form submitted')
-    fetch(`http://localhost:4000/users`, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json'
-      },
-      body: JSON.stringify(
-        // didn't use curlies because userInfo is an object already
-        userInfo
-      )
-    })
-    .then(r => r.json())
-    // .then(console.log)
-    .then(newUserData => {
-      if (!newUserData.error) {
-        this.setState({
-          user: newUserData.user,
-          token: newUserData.token
-        }, () => {
-          this.props.history.push('/profile')
-        })
-      }
-      this.setState({
-        error_message: newUserData.error
-      })
-    })
-  }
+  //
+  // handleSignupSubmit = (userInfo) => {
+  //   console.log('Signup form submitted')
+  //   fetch(`http://localhost:4000/users`, {
+  //     method: 'POST',
+  //     headers: {
+  //       'content-type': 'application/json'
+  //     },
+  //     body: JSON.stringify(
+  //       // didn't use curlies because userInfo is an object already
+  //       userInfo
+  //     )
+  //   })
+  //   .then(r => r.json())
+  //   // .then(console.log)
+  //   .then(newUserData => {
+  //     if (!newUserData.error) {
+  //       this.setState({
+  //         user: newUserData.user,
+  //         token: newUserData.token
+  //       }, () => {
+  //         this.props.history.push('/profile')
+  //       })
+  //     }
+  //     this.setState({
+  //       error_message: newUserData.error
+  //     })
+  //   })
+  // }
 
   renderForm = (routerProps) => {
     if(routerProps.location.pathname === '/login') {
-      return <Form formName='Login' handleSubmit={this.handleLoginSubmit} error={this.state.error_message}/>
+      return <Form formName='Login' handleSubmit={this.handleSubmit} error={this.state.error_message}/>
     } else if (routerProps.location.pathname === '/signup') {
-      return <Form formName='Signup' handleSubmit={this.handleSignupSubmit} error={this.state.error_message}/>
+      return <Form formName='Signup' handleSubmit={this.handleSubmit} error={this.state.error_message} />
+    } else if (routerProps.location.pathname === '/update') {
+      return <Form formName='Update Username' handleSubmit={this.handleSubmit} user={this.state.user} error={this.state.error_message}/>
     }
   }
 
   renderProfile = () => {
-    return <Profile token={this.state.token} user={this.state.user}/>
+    return <Profile token={this.state.token} user={this.state.user} handleDelete={this.handleDelete}/>
   }
 
   renderLogout = (routerProps) => {
@@ -131,9 +137,24 @@ import Question from './QuizContainer/Question'
     routerProps.history.push('/signup')
   }
 
+  handleDelete = (id) => {
+    // this function had to fetch to the backend to
+    // delete the user from the database as well as the frontend
+    fetch(`http://localhost:4000/users/${id}`, {
+      method: 'DELETE'
+    })
+    .then(r => r.json())
+    .then(() => {
+      localStorage.clear()
+      window.location.href = "/signup"
+
+    })
+  }
+
   render() {
     // console.log(this.state, 'APP STATE')
     // console.log(this.props, 'APP PROPS')
+    // console.log(this.state.user)
     return (
       <div className="App">
       <NavBar/>
@@ -144,6 +165,8 @@ import Question from './QuizContainer/Question'
       <Route path='/profile' render={this.renderProfile}/>
       <Route path='/logout' render={this.renderLogout}/>
       <Route path='/quiz' component={Question}/>
+      <Route path='/update' render={this.renderForm}/>
+
       </div>
     );
   }
