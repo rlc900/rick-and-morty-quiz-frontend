@@ -1,6 +1,9 @@
 .App {
   background-color: black;
   font-family: 'Get Schwifty', serif;
+  height: 100vh;
+  width: 100vw;
+  /* background-image: url('https://wallpaperscute.com/wp-content/uploads/2018/04/Best-Rick-and-Morty-Wallpaper.jpg'); */
   /* padding: 40vw; */
   /* margin: -27vw; */
 }
