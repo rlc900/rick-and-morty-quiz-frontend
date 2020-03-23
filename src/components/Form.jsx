@@ -40,16 +40,16 @@ class Form extends Component {
 
     return (
       <form onSubmit={this.handleSubmit}>
-        <h1>{formName}</h1>
+        <h1 className='form'>{formName}</h1>
         <label htmlFor='username'>Username:</label>
         <input type='text' autoComplete='off' name='username' value={username} onChange={this.handleChange}/>
         { path === '/update' ?
           null :
           <Fragment>
         <label htmlFor='username'>Password:</label>
-        <input type='text' autoComplete='off' name='password' value={password} onChange={this.handleChange}/>
+        <input type='password' autoComplete='off' name='password' value={password} onChange={this.handleChange}/>
       </Fragment>}
-        <input type='submit' value='Submit'/>
+        <input className='submit' type='submit' value='Submit'/>
         <h2>{this.props.error}</h2>
       </form>
     );

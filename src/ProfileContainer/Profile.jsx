@@ -13,8 +13,8 @@ class Profile extends Component {
     // console.log(this.props);
     let {user: {username}} = this.props
     return (
-      <div>
-      <h2>{username}&apos;s Profile</h2>
+      <div className='profile-cont'>
+      <h2 className='profile'>{username}&apos;s Profile</h2>
       <button onClick={this.handleClick}>Delete Profile :/</button>
       </div>
     );

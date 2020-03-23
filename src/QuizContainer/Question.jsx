@@ -5,7 +5,7 @@ class Question extends Component {
   state = {
     questionArr: [],
     whichQuestionCount: 0,
-    points: 0
+    points: null
 
   }
 
@@ -51,7 +51,7 @@ class Question extends Component {
     // console.log(this.state.questionObj)
     // return this.state.questionArr.map(question => <li onClick={this.handleClick}>{question.getAnswers}</li>)
     return this.state.questionArr.length !== 0 ?
-    this.state.questionArr[this.state.whichQuestionCount].getAnswers.map((answer, index) => <li onClick={() => this.handleClick(index + 1)}>{answer}</li>)
+    this.state.questionArr[this.state.whichQuestionCount].getAnswers.map((answer, index) => <li className='answer' onClick={() => this.handleClick(index + 1)}>{answer}</li>)
     :
     ""
   }

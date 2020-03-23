@@ -85,35 +85,7 @@ import Question from './QuizContainer/Question'
       })
     })
   }
-  //
-  // handleSignupSubmit = (userInfo) => {
-  //   console.log('Signup form submitted')
-  //   fetch(`http://localhost:4000/users`, {
-  //     method: 'POST',
-  //     headers: {
-  //       'content-type': 'application/json'
-  //     },
-  //     body: JSON.stringify(
-  //       // didn't use curlies because userInfo is an object already
-  //       userInfo
-  //     )
-  //   })
-  //   .then(r => r.json())
-  //   // .then(console.log)
-  //   .then(newUserData => {
-  //     if (!newUserData.error) {
-  //       this.setState({
-  //         user: newUserData.user,
-  //         token: newUserData.token
-  //       }, () => {
-  //         this.props.history.push('/profile')
-  //       })
-  //     }
-  //     this.setState({
-  //       error_message: newUserData.error
-  //     })
-  //   })
-  // }
+
 
   renderForm = (routerProps) => {
     if(routerProps.location.pathname === '/login') {

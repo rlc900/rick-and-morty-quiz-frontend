@@ -1,10 +1,23 @@
 .App {
-  text-align: center;
+  background-color: black;
+  font-family: 'Get Schwifty', serif;
+  /* padding: 40vw; */
+  /* margin: -27vw; */
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #65FF2C;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -46,4 +59,37 @@ img.get-schwifty {
 
 ul.nav-bar > li {
   list-style: none;
+  color: black;
+
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.profile {
+  color: #65FF2C;
+  font-family: sans-serif;
+}
+
+.form {
+  color: #65FF2C;
+  font-family: sans-serif;
+}
+
+.answer:hover {
+  align-content: flex-start;
+  font-family: sans-serif;
+  color: #65FF2C;
+}
+
+div.profile-cont{
+  margin-left: 35%;
+}
+
+.result-img{
+  background: transparent
+
 }
