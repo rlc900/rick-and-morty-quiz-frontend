@@ -3,13 +3,16 @@
   font-family: 'Get Schwifty', serif;
   height: 100vh;
   width: 100vw;
-  /* background-image: url('https://wallpaperscute.com/wp-content/uploads/2018/04/Best-Rick-and-Morty-Wallpaper.jpg'); */
+  background-position: center; 
+  background-image: url('https://wallpaperscute.com/wp-content/uploads/2018/04/Best-Rick-and-Morty-Wallpaper.jpg');
   /* padding: 40vw; */
   /* margin: -27vw; */
 }
 
 .home {
   font-family: 'Get Schwifty', serif;
+  color: #65FF2C;
+  text-align: center;
 }
 
 .App-logo {
@@ -57,12 +60,6 @@ a:hover {
   }
 }
 
-img.get-schwifty {
-  width: 80vw;
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 ul.nav-bar > li {
   list-style: none;
