@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 
 class Profile extends Component {
 
@@ -13,8 +14,9 @@ class Profile extends Component {
     // console.log(this.props);
     let {user: {username}} = this.props
     return (
-      <div className='profile-cont'>
+      <div>
       <h2 className='profile'>{username}&apos;s Profile</h2>
+      <Link to='/quiz'>Which Rick & Morty Character are you?</Link>
       <button onClick={this.handleClick}>Delete Profile :/</button>
       </div>
     );

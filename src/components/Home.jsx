@@ -6,7 +6,9 @@ class Home extends Component {
   render() {
     return (
       <div>
-      <h1 className='home'>Which Rick and Morty Character are you, broh</h1>
+      <h1 className='home-h1'>Rick and Morty Quiz App</h1>
+      <h2 className='home-h2'>Signup or Login to find out, broh!</h2>
+      <img src='rick_and_morty.jpg' alt='Rick and Morty staring into oblivion'/>
       </div>
     );
   }
