@@ -5,8 +5,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div >
-      <img className='get-schwifty' src='get_schwifty.png'/>
+      <div>
+      <h1 className='home'>Which Rick and Morty Character are you, broh</h1>
       </div>
     );
   }

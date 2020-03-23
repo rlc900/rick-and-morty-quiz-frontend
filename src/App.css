@@ -8,6 +8,10 @@
   /* margin: -27vw; */
 }
 
+.home {
+  font-family: 'Get Schwifty', serif;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
