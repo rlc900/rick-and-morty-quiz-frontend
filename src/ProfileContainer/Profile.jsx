@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import {Button} from 'semantic-ui-react'
 
 class Profile extends Component {
 
@@ -15,9 +16,9 @@ class Profile extends Component {
     let {user: {username}} = this.props
     return (
       <div>
-      <h2 className='profile'>{username}&apos;s Profile</h2>
-      <Link to='/quiz'>Which Rick & Morty Character are you?</Link>
-      <button classname='delete-button' onClick={this.handleClick}>Delete Profile :/</button>
+      <h1 className='profile'>{username}&apos;s Profile</h1>
+      <h2 className='quiz'><Link to='/quiz'>Which Rick & Morty Character are you?</Link></h2>
+      <h3><Button classname='delete-button' onClick={this.handleClick}>Delete Profile</Button></h3>
       </div>
     );
   }

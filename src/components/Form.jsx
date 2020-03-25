@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react';
-import { Form } from 'semantic-ui-react'
+import { Header, Form } from 'semantic-ui-react'
 
 class UserForm extends Component {
 
@@ -40,8 +40,8 @@ class UserForm extends Component {
     let path = window.location.pathname
 
     return (
-      <Form onSubmit={this.handleSubmit}>
-        <h1 className='form'>{formName}</h1>
+      <form onSubmit={this.handleSubmit}>
+        <Header className='form-name'>{formName}</Header>
         <label htmlFor='username'>Username:</label>
         <input type='text' autoComplete='off' name='username' value={username} onChange={this.handleChange}/>
         { path === '/update' ?
@@ -53,7 +53,7 @@ class UserForm extends Component {
 
         <h2>{this.props.error}</h2>
         <Form.Button inverted color='green'>Submit</Form.Button>
-      </Form>
+      </form>
     );
   }
 

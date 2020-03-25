@@ -1,10 +1,11 @@
+
 .App {
   background-color: black;
   font-family: 'Get Schwifty', serif;
   height: 100vh;
   width: 100vw;
   background-position: center;
-  /* background-image: url('https://wallpaperscute.com/wp-content/uploads/2018/04/Best-Rick-and-Morty-Wallpaper.jpg'); */
+  /* background-image: url('https://wallpaperaccess.com/full/85327.png'); */
   /* padding: 40vw; */
   /* margin: -27vw; */
 }
@@ -12,7 +13,7 @@
 /* START HOME COMPONENT */
 
 .home-div {
-  background-image: url('https://wallpaperscute.com/wp-content/uploads/2018/04/Best-Rick-and-Morty-Wallpaper.jpg')
+  background-image: url('https://wallpaperaccess.com/full/85327.png');
 }
 
 
@@ -36,11 +37,31 @@
   font-family: 'Get Schwifty', serif;
 }
 
-.delete-button:hover {
+.quiz {
+  font-family: 'Get Schwifty', serif;
+}
+
+.delete-button {
   text-decoration: none;
   color: white;
 }
 /* END PROFILE COMPONENT */
+
+/* START SIGNUP/LOGIN FORM */
+
+.form-name {
+  font-size: 50px;
+
+}
+
+
+.button {
+  background-color:#65FF2C;
+  border: 1px solid black;
+
+}
+
+/* END SIGNUP/LOGIN FORM */
 
 .App-logo {
   height: 40vmin;
@@ -100,11 +121,6 @@ ul.nav-bar > li {
 
 }
 
-.profile {
-  color: #65FF2C;
-  font-family: sans-serif;
-}
-
 .form {
   color: #65FF2C;
   font-family: sans-serif;
@@ -112,7 +128,6 @@ ul.nav-bar > li {
 
 .answer:hover {
   align-content: flex-start;
-  font-family: sans-serif;
   color: #65FF2C;
 }
 
