@@ -31,9 +31,16 @@
 
 /* END HOME COMPONENT */
 
+/* START PROFILE COMPONENT */
 .profile {
   font-family: 'Get Schwifty', serif;
 }
+
+.delete-button:hover {
+  text-decoration: none;
+  color: white;
+}
+/* END PROFILE COMPONENT */
 
 .App-logo {
   height: 40vmin;

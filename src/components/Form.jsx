@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
+import { Form } from 'semantic-ui-react'
 
-class Form extends Component {
+class UserForm extends Component {
 
   state = {
     username: '',
@@ -39,7 +40,7 @@ class Form extends Component {
     let path = window.location.pathname
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <Form onSubmit={this.handleSubmit}>
         <h1 className='form'>{formName}</h1>
         <label htmlFor='username'>Username:</label>
         <input type='text' autoComplete='off' name='username' value={username} onChange={this.handleChange}/>
@@ -49,12 +50,15 @@ class Form extends Component {
         <label htmlFor='username'>Password:</label>
         <input type='password' autoComplete='off' name='password' value={password} onChange={this.handleChange}/>
       </Fragment>}
-        <input className='submit' type='submit' value='Submit'/>
+
         <h2>{this.props.error}</h2>
-      </form>
+        <Form.Button inverted color='green'>Submit</Form.Button>
+      </Form>
     );
   }
 
 }
 
-export default Form;
+export default UserForm;
+
+  // <input className='submit' type='submit' value='Submit'/>

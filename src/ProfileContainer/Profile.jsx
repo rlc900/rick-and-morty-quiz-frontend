@@ -17,7 +17,7 @@ class Profile extends Component {
       <div>
       <h2 className='profile'>{username}&apos;s Profile</h2>
       <Link to='/quiz'>Which Rick & Morty Character are you?</Link>
-      <button onClick={this.handleClick}>Delete Profile :/</button>
+      <button classname='delete-button' onClick={this.handleClick}>Delete Profile :/</button>
       </div>
     );
   }
