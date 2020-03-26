@@ -23,19 +23,10 @@ class Question extends Component {
 
   handleClick = (value) => {
     // console.log('this is working')
-    // console.log(value)
-    // if whichQuestionCount === questions.length
-    // setState()
-    //
-    // let {whichQuestionCount, questionArr} = this.state
     this.setState({
       whichQuestionCount: this.state.whichQuestionCount + 1,
       points: this.state.points + value
     }, () => console.log(this.state.whichQuestionCount))
-    //
-    // if(whichQuestionCount > questionArr.length) {
-    //   return this.state.points
-    // }
   }
 
   getQuestions = () => {

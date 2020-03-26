@@ -1,10 +1,11 @@
 
 .App {
   font-family: 'Get Schwifty', serif;
+   vertical-align: middle;
   /* background-position: center; */
   /* background-image: url('https://wallpaperaccess.com/full/85327.png'); */
-  /* padding: 40vw; */
-  /* margin: -27vw; */
+  /* padding-left: 40%; */
+  /* margin-left: 50%; */
 }
 
 /* START HOME COMPONENT */
@@ -13,7 +14,6 @@
   font-family: 'Get Schwifty', serif;
   color: #65FF2C;
   text-align: center;
-  /* background-image: url('https://wallpaperscute.com/wp-content/uploads/2018/04/Best-Rick-and-Morty-Wallpaper.jpg') */
 }
 
 .home-h2 {
