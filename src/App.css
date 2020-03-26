@@ -1,21 +1,13 @@
 
 .App {
-  background-color: black;
   font-family: 'Get Schwifty', serif;
-  height: 100vh;
-  width: 100vw;
-  background-position: center;
+  /* background-position: center; */
   /* background-image: url('https://wallpaperaccess.com/full/85327.png'); */
   /* padding: 40vw; */
   /* margin: -27vw; */
 }
 
 /* START HOME COMPONENT */
-
-.home-div {
-  background-image: url('https://wallpaperaccess.com/full/85327.png');
-}
-
 
 .home-h1 {
   font-family: 'Get Schwifty', serif;
@@ -126,9 +118,13 @@ ul.nav-bar > li {
   font-family: sans-serif;
 }
 
+.answer {
+  color: #65FF2C;
+}
+
 .answer:hover {
   align-content: flex-start;
-  color: #65FF2C;
+  color: white;
 }
 
 div.profile-cont{

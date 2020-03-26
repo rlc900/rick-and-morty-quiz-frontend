@@ -1,11 +1,13 @@
 body {
-  margin-left: 22vw;
+  /* margin-left: 22vw; */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: black;
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/e94c32d0-ae33-4efd-9716-83ebd0652503/dahrufl-3808681f-4a90-44b8-98fe-4a23355b3139.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2U5NGMzMmQwLWFlMzMtNGVmZC05NzE2LTgzZWJkMDY1MjUwM1wvZGFocnVmbC0zODA4NjgxZi00YTkwLTQ0YjgtOThmZS00YTIzMzU1YjMxMzkucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.823BVuurQWQB-X76sqxrhRtO-CuU3UVMTtmZjW6X6Es');
+  background-size: 108%;
+
 }
 
 code {
