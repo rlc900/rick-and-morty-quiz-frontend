@@ -58,7 +58,7 @@ class Question extends Component {
     }
     return (
       <div>
-        <h1 className='question'>{this.getQuestions() ? this.getQuestions():  null}</h1>
+        <h1 className='questions'>{this.getQuestions() ? this.getQuestions():  null}</h1>
         <ol>{this.getQuestions() ? this.getAnswers() : 'you failed'}</ol>
 
       </div>
