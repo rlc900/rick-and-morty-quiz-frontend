@@ -12,13 +12,13 @@
 
 .home-h1 {
   font-family: 'Get Schwifty', serif;
-  color: #65FF2C;
+  color: #54FFD3;
   text-align: center;
 }
 
 .home-h2 {
   font-family: 'Get Schwifty', serif;
-  color: #65FF2C;
+  color: #54FFD3;
   text-align: center;
 }
 
@@ -33,7 +33,47 @@
 
 /* START PROFILE COMPONENT */
 .profile {
-  font-family: 'Get Schwifty', serif;
+    -webkit-animation: color-change 1s infinite;
+    -moz-animation: color-change 1s infinite;
+    -o-animation: color-change 1s infinite;
+    -ms-animation: color-change 1s infinite;
+    animation: color-change 1s infinite;
+}
+
+@-webkit-keyframes color-change {
+    0% { color: white;}
+    25% { color: #54FFD3; }
+    50% { color: #8F82FF; }
+    75% { color: #54FFD3 }
+    100% { color: white; }
+}
+ @-moz-keyframes color-change {
+    0% { color: white;}
+    25% { color: #54FFD3; }
+    50% { color: #8F82FF; }
+    75% { color: #54FFD3 }
+    100% { color: white; }
+}
+@-ms-keyframes color-change {
+    0% { color: white;}
+    25% { color: #54FFD3; }
+    50% { color: #8F82FF; }
+    75% { color: #54FFD3 }
+    100% { color: white; }
+}
+@-o-keyframes color-change {
+    0% { color: white;}
+    25% { color: #54FFD3; }
+    50% { color: #8F82FF; }
+    75% { color: #54FFD3 }
+    100% { color: white; }
+}
+@keyframes color-change {
+    0% { color: white;}
+    25% { color: #54FFD3; }
+    50% { color: #8F82FF; }
+    75% { color: #54FFD3; }
+    100% { color: white; }
 }
 
 .quiz {
@@ -41,8 +81,8 @@
 }
 
 .delete-button {
-  text-decoration: none;
-  color: white;
+  /* text-decoration: none;
+  color: white; */
 }
 /* END PROFILE COMPONENT */
 
@@ -80,6 +120,19 @@
 
 /* END QUEST COMPONENT */
 
+/* START RESULT COMPONENT */
+
+.result {
+  font-family: 'Get Schwifty', serif;
+  color: white;
+}
+
+.result-img{
+  background: transparent
+}
+
+/* END RESULT COMPONENT */
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -87,7 +140,8 @@
 
 a {
   text-decoration: none;
-  color: #65FF2C;
+  color: #54FFD3;
+  font-size: x-large;
 }
 
 a:hover {
@@ -139,7 +193,7 @@ ul.nav-bar > li {
 }
 
 .form {
-  color: #65FF2C;
+  color: #54FFD3;
   font-family: sans-serif;
 }
 
