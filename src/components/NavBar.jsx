@@ -1,42 +1,48 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { Menu } from 'semantic-ui-react'
 
 class NavBar extends Component {
 
   handleEntrance = () => {
     if (localStorage.token) {
       return (
-          <ul className='nav-bar'>
-          <li>
-            <NavLink to='/'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to='/profile'>Profile</NavLink>
-          </li>
-          <li>
-            <NavLink to='/logout'>Logout</NavLink>
-          </li>
-          <li>
-            <NavLink to='/quiz'>Take Quiz</NavLink>
-          </li>
-          <li>
-            <NavLink to='/update'>Update Username</NavLink>
-          </li>
-        </ul>
-            )
-    } else {
-      return (
-          <ul className='nav-bar'>
-          <li>
-            <NavLink to='/'>Home</NavLink>
-          </li>
-          <li>
-            <NavLink to='/signup'>Signup</NavLink>
-          </li>
-          <li>
-            <NavLink to='/login'>Login</NavLink>
-          </li>
-        </ul> )
+        <div>
+        <Menu secondary vertical={true} fixed='left'>
+          <Menu.Item>
+            <Link to='/' className='home'>Home</Link>
+          </Menu.Item>
+          <Menu.Item>
+           <Link to ='/profile' className='profile-link'>Profile</Link>
+          </Menu.Item>
+          <Menu.Item>
+            <Link to='/quiz' className='take-quiz'>Take Quiz</Link>
+          </Menu.Item>
+          <Menu.Item>
+           <Link to ='/update' className='update'>Update Username</Link>
+          </Menu.Item>
+          <Menu.Item>
+           <Link to ='/logout' className='logout'>Logout</Link>
+          </Menu.Item>
+        </Menu>
+        </div>
+        )
+      } else {
+        return (
+          <div>
+          <Menu secondary vertical={true} fixed='left'>
+            <Menu.Item>
+              <Link to ='/' className='home'>Home</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to ='/signup' className='signup'>Signup</Link>
+            </Menu.Item>
+            <Menu.Item>
+              <Link to ='/login' className='login'>Login</Link>
+            </Menu.Item>
+          </Menu>
+        </div>
+      )
     }
   }
 

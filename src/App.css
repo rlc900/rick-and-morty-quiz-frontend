@@ -2,18 +2,57 @@
 .App {
   font-family: 'Get Schwifty', serif;
    vertical-align: middle;
-  /* background-position: center; */
-  /* background-image: url('https://wallpaperaccess.com/full/85327.png'); */
-  /* padding-left: 40%; */
-  /* margin-left: 50%; */
+   
 }
 
-/* START HOME COMPONENT */
+
+
+/* START NAVBAR */
+.home {
+    font-family: 'Get Schwifty', serif;
+}
+
+.profile-link {
+  font-family: 'Get Schwifty', serif;
+}
+
+.take-quiz {
+    font-family: 'Get Schwifty', serif;
+}
+.update {
+    font-family: 'Get Schwifty', serif;
+}
+.logout {
+    font-family: 'Get Schwifty', serif;
+}
+.signup {
+    font-family: 'Get Schwifty', serif;
+}
+.login {
+    font-family: 'Get Schwifty', serif;
+}
+
+
+
+/* END NAVBAR */
+
+
+
+
+
+/* START HOME */
 
 .home-h1 {
   font-family: 'Get Schwifty', serif;
   color: #54FFD3;
   text-align: center;
+  font-size: 400%;
+
+  -webkit-animation: color-change 1s infinite;
+  -moz-animation: color-change 1s infinite;
+  -o-animation: color-change 1s infinite;
+  -ms-animation: color-change 1s infinite;
+  animation: color-change 1s infinite;
 }
 
 .home-h2 {
@@ -38,6 +77,8 @@
     -o-animation: color-change 1s infinite;
     -ms-animation: color-change 1s infinite;
     animation: color-change 1s infinite;
+
+    font-family: 'Get Schwifty', serif;
 }
 
 @-webkit-keyframes color-change {
@@ -79,20 +120,14 @@
 .quiz {
   font-family: 'Get Schwifty', serif;
 }
-
-.delete-button {
-  /* text-decoration: none;
-  color: white; */
-}
 /* END PROFILE COMPONENT */
+
 
 /* START SIGNUP/LOGIN FORM */
 
 .form-name {
   font-size: 50px;
-
 }
-
 
 .button {
   background-color:#65FF2C;
@@ -102,10 +137,14 @@
 
 /* END SIGNUP/LOGIN FORM */
 
+
+
 /* START QUEST COMPONENT */
 .questions {
   font-family: 'Get Schwifty', serif;
   color: white;
+  font-size: 200%;
+  margin-top: 50px;
 }
 
 .answer {
@@ -115,10 +154,12 @@
 
 .answer:hover {
   align-content: flex-start;
-  color: #65FF2C;
+  color: #54FFD3;
 }
 
 /* END QUEST COMPONENT */
+
+
 
 /* START RESULT COMPONENT */
 
@@ -132,6 +173,22 @@
 }
 
 /* END RESULT COMPONENT */
+
+/* START FORM COMPONENT */
+
+.ui.header:first-child {
+    margin-top: -.14285714em;
+    color: #54FFD3;
+    font-family: 'Get Schwifty', serif;
+    font-size: large;
+}
+
+.username {
+    font-family: 'Get Schwifty', serif;
+}
+
+/* END FORM COMPONENT */
+
 
 .App-logo {
   height: 40vmin;
@@ -148,37 +205,6 @@ a:hover {
   text-decoration: none;
   color: white;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 
 ul.nav-bar > li {
   list-style: none;

@@ -42,7 +42,7 @@ class UserForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <Header className='form-name'>{formName}</Header>
-        <label htmlFor='username'>Username:</label>
+        <label htmlFor='username' className='username'>Username:</label>
         <input type='text' autoComplete='off' name='username' value={username} onChange={this.handleChange}/>
         { path === '/update' ?
           null :
@@ -52,7 +52,7 @@ class UserForm extends Component {
       </Fragment>}
 
         <h2>{this.props.error}</h2>
-        <Form.Button inverted color='green'>Submit</Form.Button>
+        <Form.Button basic inverted color='blue'>Submit</Form.Button>
       </form>
     );
   }
