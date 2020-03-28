@@ -47,12 +47,12 @@ class UserForm extends Component {
         { path === '/update' ?
           null :
           <Fragment>
-        <label htmlFor='username'>Password:</label>
+        <label htmlFor='username' className='password'>Password:</label>
         <input type='password' autoComplete='off' name='password' value={password} onChange={this.handleChange}/>
       </Fragment>}
 
         <h2>{this.props.error}</h2>
-        <Form.Button basic inverted color='blue'>Submit</Form.Button>
+        <Form.Button basic inverted color='white'>Submit</Form.Button>
       </form>
     );
   }
