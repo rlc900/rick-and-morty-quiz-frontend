@@ -6,22 +6,22 @@ class Result extends Component {
   renderCharacter = (points) => {
     if (points != null){
       if (points <= 10) {
-        return this.imgTag("jerry.jpg", "Jerry")
+        return this.imgTag("jerry.jpg", "Jerry", 'You\'re Jerry! Jerry is sometimes misguided by his insecurities, and could be a bit self-centered at times. Despite this, he has the ability to channel his inner strength to conquor his darkest fears, and at the end of the day always does whats best for his family.')
       } else if (points === 11 || points <= 14){
-        return this.imgTag("morty.png", "Morty")
+        return this.imgTag("morty.png", "Morty", '')
       } else if (points === 15 || points <= 18){
-        return this.imgTag("rick.png", "Rick")
+        return this.imgTag("rick.png", "Rick", '')
       } else if (points === 19 || points <= 21){
-        return this.imgTag("summer.png", "Summer")
+        return this.imgTag("summer.png", "Summer", '')
       } else if (points === 22 || points <= 24){
-        return this.imgTag("beth.png", "Beth")
+        return this.imgTag("beth.png", "Beth", '')
       }
     } else {
       return null
     }
   }
 
-   imgTag = (url, name) => {
+   imgTag = (url, name, desc) => {
     return (
       <Card>
    <Image src={url} wrapped ui={false} />
@@ -31,7 +31,7 @@ class Result extends Component {
        <span className='date'>Joined in 2015</span>
      </Card.Meta>
      <Card.Description>
-       Matthew is a musician living in Nashville.
+       {desc}
      </Card.Description>
    </Card.Content>
    <Card.Content extra>
