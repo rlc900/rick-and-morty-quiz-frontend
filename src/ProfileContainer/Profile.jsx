@@ -16,10 +16,11 @@ class Profile extends Component {
     return (
       <div>
       <h1 className='profile'>{username}&apos;s Profile</h1>
-      <h2 className='quiz'><Link to='/quiz'>Which Rick and Morty Character are you?</Link></h2>
+      <h1 className='results'>Results:</h1>
+
       <h3><Button
       className='delete-button'
-      basic inverted color='blue'
+      basic inverted color='white'
       onClick={this.handleClick}>Delete Profile</Button></h3>
       </div>
     );

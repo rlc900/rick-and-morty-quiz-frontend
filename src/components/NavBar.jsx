@@ -16,6 +16,9 @@ class NavBar extends Component {
            <Link to ='/profile' className='profile-link'>Profile</Link>
           </Menu.Item>
           <Menu.Item>
+            <Link to='/quiz' className='take-quiz'>Take Quiz</Link>
+          </Menu.Item>
+          <Menu.Item>
            <Link to ='/update' className='update'>Update Username</Link>
           </Menu.Item>
           <Menu.Item>
@@ -54,7 +57,3 @@ class NavBar extends Component {
 }
 
 export default NavBar;
-
-// <Menu.Item>
-//   <Link to='/quiz' className='take-quiz'>Take Quiz</Link>
-// </Menu.Item>

@@ -123,8 +123,10 @@ ul.nav-bar > li {
     100% { color: white; }
 }
 
-.quiz {
+.results {
   font-family: 'Get Schwifty', serif;
+  color: white;
+  font-size: 50px;
 }
 /* END PROFILE COMPONENT */
 
@@ -166,7 +168,6 @@ ul.nav-bar > li {
 /* END QUEST COMPONENT */
 
 
-
 /* START RESULT COMPONENT */
 
 .result {
@@ -179,6 +180,7 @@ ul.nav-bar > li {
 }
 
 /* END RESULT COMPONENT */
+
 
 /* START FORM COMPONENT */
 
