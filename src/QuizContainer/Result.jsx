@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import {Card, Image} from 'semantic-ui-react'
+import {Card, Image, Button} from 'semantic-ui-react'
+import {withRouter} from 'react-router-dom'
 
 class Result extends Component {
+
 
   renderCharacter = (points) => {
     if (points != null){
@@ -22,22 +24,41 @@ class Result extends Component {
   }
 
    imgTag = (url, name, desc) => {
-    return (
-      <Card>
-   <Image src={url} wrapped ui={false} />
-   <Card.Content>
-     <Card.Header>{name}</Card.Header>
-     <Card.Meta>
-       <span className='date'>Joined in 2015</span>
-     </Card.Meta>
-     <Card.Description>
-       {desc}
-     </Card.Description>
-   </Card.Content>
-   <Card.Content extra>
-   </Card.Content>
- </Card>
-    )
+
+     let resultCard = <Card>
+    <Image src={url} wrapped ui={false} />
+    <Card.Content>
+      <Card.Header>{name}</Card.Header>
+      <Card.Meta>
+        <span className='date'>Joined in 2015</span>
+      </Card.Meta>
+      <Card.Description>
+        {desc}
+      </Card.Description>
+      <Button onClick={ () => this.handleClick(name)}>Save Result</Button>
+    </Card.Content>
+  </Card>
+    return resultCard
+  }
+
+  handleClick = (name) => {
+    // I want this function to add the character card
+    // to users profile page.
+    // let {result} = this.state
+    console.log(name)
+    fetch(`http://localhost:4000/user_quizzes`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `bearer ${localStorage.token}`,
+        'Content-Type': 'application/json',
+      }
+    })
+    .then(r => r.json())
+    // .then(console.log)
+    .then(result => {
+      this.props.history.push('/profile')
+    })
+
   }
 
   render() {
@@ -52,5 +73,5 @@ class Result extends Component {
 
 }
 
-export default Result;
+export default withRouter(Result);
   // {this.renderCharacter(this.props.totalPoints)}

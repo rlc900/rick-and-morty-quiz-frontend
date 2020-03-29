@@ -162,6 +162,7 @@ h1:first-child {
 .answer {
   color: white;
   font-size: x-large;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 .answer:hover {

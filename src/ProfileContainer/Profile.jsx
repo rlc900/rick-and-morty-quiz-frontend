@@ -10,6 +10,12 @@ class Profile extends Component {
     this.props.handleDelete(this.props.user.id)
   }
 
+  componentDidMount() {
+    fetch(`http://localhost:4000/user_quizzes`)
+      .then(r => r.json())
+      .then(console.log)
+  }
+
   render() {
     // console.log(this.props);
     let {user: {username}} = this.props
