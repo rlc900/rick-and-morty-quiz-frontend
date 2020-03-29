@@ -47,6 +47,9 @@ ul.nav-bar > li {
 
 
 /* START HOME */
+h1:first-child {
+  margin-top: 20px;
+}
 
 .home-h1 {
   font-family: 'Get Schwifty', serif;
@@ -78,6 +81,7 @@ ul.nav-bar > li {
 
 /* START PROFILE COMPONENT */
 .profile {
+    margin-top: 1;
     -webkit-animation: color-change 1s infinite;
     -moz-animation: color-change 1s infinite;
     -o-animation: color-change 1s infinite;
