@@ -40,6 +40,7 @@ class Result extends Component {
       </Button>
     </Card.Content>
   </Card>
+
     return resultCard
   }
 
@@ -60,9 +61,11 @@ class Result extends Component {
     })
     .then(r => r.json())
     // .then(console.log)
-    .then(result => {
+    .then(user => {
       this.props.history.push('/profile')
-      this.props.setName(result)
+      //this.props.setName(result)
+      this.props.setUser(user)
+      // console.log(user)
     })
 
   }
@@ -73,6 +76,7 @@ class Result extends Component {
       <div>
       <h1 className='result'>You are:</h1>
         {this.renderCharacter(this.props.totalPoints)}
+
       </div>
     );
   }

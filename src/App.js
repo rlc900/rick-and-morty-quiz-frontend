@@ -16,13 +16,13 @@ import Question from './QuizContainer/Question'
     user: {},
     token: '',
     error_message: '',
-    name: ''
+
 
   }
 
-  setName = (name) => {
+  setUser = (user) => {
     this.setState({
-      name: name
+      user: user
     })
   }
 
@@ -141,7 +141,7 @@ import Question from './QuizContainer/Question'
       <Route path='/signup' render={this.renderForm}/>
       <Route path='/profile' render={this.renderProfile}/>
       <Route path='/logout' render={this.renderLogout}/>
-      <Route path='/quiz' render={(rp) => <Question {...rp} setName={this.setName}/>}/>
+      <Route path='/quiz' render={(rp) => <Question {...rp} setUser={this.setUser}/>}/>
       <Route path='/update' render={this.renderForm}/>
 
       </div>
