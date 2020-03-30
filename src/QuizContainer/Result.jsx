@@ -45,18 +45,22 @@ class Result extends Component {
     // I want this function to add the character card
     // to users profile page.
     // let {result} = this.state
-    console.log(name)
+    // console.log(name)
     fetch(`http://localhost:4000/user_quizzes`, {
       method: 'POST',
       headers: {
         'Authorization': `bearer ${localStorage.token}`,
         'Content-Type': 'application/json',
-      }
+      },
+      body: JSON.stringify({
+        name: name
+      })
     })
     .then(r => r.json())
     // .then(console.log)
     .then(result => {
       this.props.history.push('/profile')
+      this.props.setName(result)
     })
 
   }

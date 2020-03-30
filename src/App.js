@@ -8,7 +8,6 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Profile from './ProfileContainer/Profile'
 
-
 import Question from './QuizContainer/Question'
 
  class App extends React.Component {
@@ -17,9 +16,15 @@ import Question from './QuizContainer/Question'
     user: {},
     token: '',
     error_message: '',
+    name: ''
 
   }
 
+  setName = (name) => {
+    this.setState({
+      name: name
+    })
+  }
 
   componentDidMount() {
     // this.renderQuestions()
@@ -98,7 +103,7 @@ import Question from './QuizContainer/Question'
   }
 
   renderProfile = () => {
-    return <Profile token={this.state.token} user={this.state.user} handleDelete={this.handleDelete}/>
+    return <Profile token={this.state.token} user={this.state.user} handleDelete={this.handleDelete} name={this.state.name}/>
   }
 
   renderLogout = (routerProps) => {
@@ -136,7 +141,7 @@ import Question from './QuizContainer/Question'
       <Route path='/signup' render={this.renderForm}/>
       <Route path='/profile' render={this.renderProfile}/>
       <Route path='/logout' render={this.renderLogout}/>
-      <Route path='/quiz' component={Question}/>
+      <Route path='/quiz' render={(rp) => <Question {...rp} setName={this.setName}/>}/>
       <Route path='/update' render={this.renderForm}/>
 
       </div>

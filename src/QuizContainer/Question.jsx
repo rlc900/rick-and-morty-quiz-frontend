@@ -54,7 +54,7 @@ class Question extends Component {
     // let result;
     // console.log("which q", whichQuestionCount);
     if(whichQuestionCount >= questionArr.length) {
-      return <Result totalPoints={this.state.points}/>
+      return <Result totalPoints={this.state.points} setName={this.props.setName}/>
     }
     return (
       <div>
