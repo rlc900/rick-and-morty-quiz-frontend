@@ -202,6 +202,11 @@ p:last-child {
 
 /* START FORM COMPONENT */
 
+.error {
+  font-family: 'Get Schwifty', serif;
+  color: white;
+}
+
 .ui.header:first-child {
     margin-top: -.14285714em;
     color: #54FFD3;

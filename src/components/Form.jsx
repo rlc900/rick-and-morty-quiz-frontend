@@ -51,7 +51,7 @@ class UserForm extends Component {
         <input type='password' autoComplete='off' name='password' value={password} onChange={this.handleChange}/>
       </Fragment>}
 
-        <h2>{this.props.error}</h2>
+        <h2 className='error'>{this.props.error}</h2>
         <Form.Button basic inverted color='white'>Submit</Form.Button>
       </form>
     );
