@@ -25,7 +25,7 @@ class Profile extends Component {
       <h1 className='profile'>{username}&apos;s Profile</h1>
       <h1 className='results'>Results:</h1>
         <h2>{this.props.user.results ? this.props.user.results.map((result) => {
-        return <p>{result}</p>
+        return <p className='name'>{result}</p>
       }) : null}</h2>
       <h3><Button
       className='delete-button'

@@ -5,8 +5,6 @@
 
 }
 
-
-
 /* START NAVBAR */
 .home {
     font-family: 'Get Schwifty', serif;
@@ -75,6 +73,12 @@ h1:first-child {
   bottom:0;
   right:0;
   color: white;
+
+}
+
+p:last-child {
+  margin-bottom: -10px;
+  margin-right: 10px;
 }
 
 /* END HOME COMPONENT */
@@ -132,6 +136,12 @@ h1:first-child {
   color: white;
   font-size: 50px;
 }
+
+.name {
+  font-family: 'Get Schwifty', serif;
+  color: white;
+}
+
 /* END PROFILE COMPONENT */
 
 
