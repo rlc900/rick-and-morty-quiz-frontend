@@ -144,7 +144,6 @@ p:last-child {
 
 /* END PROFILE COMPONENT */
 
-
 /* START SIGNUP/LOGIN FORM */
 
 .form-name {
@@ -192,6 +191,10 @@ p:last-child {
 
 .result-img{
   background: transparent
+}
+
+.ui.card>.content>.header+.description {
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 /* END RESULT COMPONENT */

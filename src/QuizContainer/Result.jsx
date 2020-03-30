@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Card, Image, Button} from 'semantic-ui-react'
+import {Card, Image, Button, Icon} from 'semantic-ui-react'
 import {withRouter} from 'react-router-dom'
 
 class Result extends Component {
@@ -14,7 +14,7 @@ class Result extends Component {
       } else if (points === 15 || points <= 18){
         return this.imgTag("rick.png", "Rick", 'Wuuubba lubba dub dub! Rick is the most billiant man in the whole universe, from creating devices that produce portals to different dimensions to interdimensional cable TV boxes. His brillance gets tampered with frquently due to his alcohol addiction and harsh personal views. He has a tendency to be possessive and dominating towards Morty when they go on adventures, but as much as he hates to admit it, Ricks love for Morty and their memories will never die.')
       } else if (points === 19 || points <= 21){
-        return this.imgTag("summer.png", "Summer", 'You\'re so totally Summer. Summer is an average teenage girl that loves social media & popularity. She views her family as a dysfunctional one, and will sometimes get jealous of Rick and Morty\'s relationship. She could have sociopathic/narcissistic attitudes when she is pushed too far, similar to her brother. She\'s not as cold as she seems, and in fact cares about her family more than anyone. She once stated that she would rather live in an isolated existence without a future rather than abadoning Rick, and reminded her father Jerry \'You don\'t love someone for a reward.\'')
+        return this.imgTag("summer.jpg", "Summer", 'You\'re so totally Summer. Summer is an average teenage girl that loves social media & popularity. She views her family as a dysfunctional one, and will sometimes get jealous of Rick and Morty\'s relationship. She could have sociopathic/narcissistic attitudes when she is pushed too far, similar to her brother. She\'s not as cold as she seems, and in fact cares about her family more than anyone. She once stated that she would rather live in an isolated existence without a future rather than abadoning Rick, and reminded her father Jerry \'You don\'t love someone for a reward.\'')
       } else if (points === 22 || points <= 24){
         return this.imgTag("beth.png", "Beth", 'You\'re Beth! Beth is a dedicated horse surgeon who admires her father, Rick. She too has alcoholic tendencies like him, however has a bit more control. She\'s very ambitious, independent, and caring even though she views emotional vulnerability as a weakness. Despite those views, her family is always her top priority. ')
       }
@@ -29,13 +29,15 @@ class Result extends Component {
     <Image src={url} wrapped ui={false} />
     <Card.Content>
       <Card.Header>{name}</Card.Header>
-      <Card.Meta>
-        <span className='date'>Joined in 2015</span>
-      </Card.Meta>
-      <Card.Description>
+      <Card.Description textAlign='left'>
         {desc}
       </Card.Description>
-      <Button onClick={ () => this.handleClick(name)}>Save Result</Button>
+      <Button animated basic color='green' onClick={ () => this.handleClick(name)}>
+        <Button.Content visible>Save Result</Button.Content>
+          <Button.Content hidden>
+            <Icon name='rocket'/>
+          </Button.Content>
+      </Button>
     </Card.Content>
   </Card>
     return resultCard
