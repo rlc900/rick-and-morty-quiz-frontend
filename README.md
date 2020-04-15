@@ -5,7 +5,7 @@ A `React` application that allows users to take a 'Which character are you?' qui
 ## Technologies
 This web app makes use of the following technologies:
 
-[**Frontend**]
+**Frontend**
 - React.js
 - React Router - implemented for delcaritive routing
 - Semantic UI React
