@@ -29,6 +29,14 @@ Before you continue, please make sure you have installed the latest version of:
 ## Launch
 To launch this application, you'll have to follow these steps:
 
+**Frontend Installation**
+- Clone [this repo](https://github.com/rlc900/rick-and-morty-quiz-frontend.git) in your computers terminal.
+- After cloning, `cd` into that directiory `cd rick-and-morty-frontend/`.
+- Make sure your Backend API is running at http://localhost:4000/.
+- Run `npm install` to install all dependencies.
+- Run `npm start` to start server.
+- Once you're taken to the web app, ensure Frontend is running at http://localhost:3001.
+
 **Backend Installation**
 - Clone [this repo](https://github.com/rlc900/rick-and-morty-quiz-backend.git) in your computers terminal.
 - After cloning, `cd` into that directiory `cd rick-and-morty-quiz-backend/`.
@@ -38,14 +46,6 @@ To launch this application, you'll have to follow these steps:
 - Run `rails db:migrate` to create tables into the database.
 - Run `rails db:seed` to create seed data.
 - Run `rails s` to run the server.
-
-**Frontend Installation**
-- Clone [this repo](https://github.com/rlc900/rick-and-morty-quiz-frontend.git) in your computers terminal.
-- After cloning, `cd` into that directiory `cd rick-and-morty-frontend/`.
-- Make sure your Backend API is running at http://localhost:4000/.
-- Run `npm install` to install all dependencies.
-- Run `npm start` to start server.
-- Once you're taken to the web app, ensure Frontend is running at http://localhost:3001.
 
 ## Features
 Users are able to signup/login into their account.
